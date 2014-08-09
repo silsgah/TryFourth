@@ -24,9 +24,10 @@
             
             <ul data-role="actionsheet" id="sharemedia" data-popup='{"direction": "left"}'>
                  <li><a data-click="sharefacebook" class="addNew" type="button" href="#" data-role="button">Share Via Facebook</a>  </li>
-                <li><a data-role="button" onclick="window.plugins.socialsharing.shareViaFacebook('Message via Facebook', null, null, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">Facebook</a></li>
-				<li><a data-role="button" onclick="window.plugins.socialsharing.shareViaTwitter('Message via Twitter')" >Twitter</a></li>
-                <li><a data-role="button" onclick="window.plugins.socialsharing.share('Message and subject', 'The subject')" >Email</a></li>
+               
+				<li><a data-click="sharetwitter" data-role="button" type="button" href="#">Share Via Twitter</a></li>
+                <li><a data-click="sharemail" data-role="button" type="button" href="#">Send Mail</a></li>
+                <li><a data-click="sendsms" data-role="button" type="button" href="#">Send SMS</a></li>
             </ul>
            
 			</div>
