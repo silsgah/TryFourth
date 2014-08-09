@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    
+    <link href="styles/kendo.mobile.all.min.css" rel="stylesheet" />
+    <link href="styles/main.min.css" rel="stylesheet" />
+     <script src="js/cordova.js"></script>
+    <script src="js/cordova-plugins.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/kendo.all.min.js"></script>
+     
+     <script src="js/app.js"></script>
+    <script src="js/SocialSharing.js"></script>
+   
+   <script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+</head>
+<body>
+      <div id="tabstrip-home" data-role="view"  data-title="Avery Scott">
+             
+            <div data-role="content" class="view-content">
+			 <h1 class="app-logo hide-text center-block">Avery Scott<small>  Office Rental Services Ghana</small></h1>
+            
+            <ul data-role="actionsheet" id="sharemedia" data-popup='{"direction": "left"}'>
+                 <li><a data-click="sharefacebook" class="addNew" type="button" href="#" data-role="button">Share Via Facebook</a>  </li>
+                <li><a data-role="button" onclick="window.plugins.socialsharing.shareViaFacebook('Message via Facebook', null, null, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">Facebook</a></li>
+				<li><a data-role="button" onclick="window.plugins.socialsharing.shareViaTwitter('Message via Twitter')" >Twitter</a></li>
+                <li><a data-role="button" onclick="window.plugins.socialsharing.share('Message and subject', 'The subject')" >Email</a></li>
+            </ul>
+           
+			</div>
+    </div>
+
+      <div id="tabstrip-mainstart" 
+             data-role="view"  
+             data-title="Avery Scott" >
+             
+            <div data-role="content" class="view-content">
+               <div data-role="navbar" id="edit-navbar">
+              <a data-role="backbutton" id="back" data-align="left">Back</a>
+             </div>
+			 
+		
+	             <ul data-role="listview" data-style="inset" data-type="group">
+        <li><h2>Executive Suite </h2>  
+             <div data-role="navbar">
+            <a data-align="left" data-icon="add" data-role="button"  data-rel="modalview" href="#modalview-add">Book</a>
+        </div>
+            <ul>
+                <li><h2>Executive work station </h2></li>
+                <li><h2>Additional standard work station</h2></li>
+                <li><h2>File storage</h2></li>
+                <li><h2>Conference room discount</h2></li>
+            </ul>
+        </li>
+        <li><h2>Premium Suite </h2>
+             <div data-role="navbar">
+            <a data-align="left" data-icon="add" data-role="button"  data-rel="modalview" href="#modalview-add">Book</a>
+        </div>
+            <ul>
+                 <li><h2>Executive work station </h2></li>
+                <li><h2>Additional standard work station</h2></li>
+                <li><h2>File storage</h2></li>
+                <li><h2>Conference room discount</h2></li>
+            </ul>
+        </li>
+        <li><h2>Co-Shared</h2>
+           <div data-role="navbar">
+           
+            <a data-align="left" data-icon="add" data-role="button"  data-rel="modalview" href="#modalview-add">Book</a>
+        </div>
+            <ul>
+                 <li><h2>Executive work station </h2></li>
+                <li><h2>Additional standard work station</h2></li>
+                <li><h2>File storage</h2></li>
+                <li><h2>Conference room discount</h2></li>
+            </ul>
+        </li>
+      <li><h2>Standard</h2>
+           <div data-role="navbar">
+           
+            <a data-align="left" data-icon="add" data-role="button"  data-rel="modalview" href="#modalview-add">Book</a>
+        </div>
+            <ul>
+                 <li><h2>Executive work station </h2></li>
+                <li><h2>Additional standard work station</h2></li>
+                <li><h2>File storage</h2></li>
+                <li><h2>Conference room discount</h2></li>
+            </ul>
+        </li>
+    </ul>
+            </div>
+
+        </div>
+
+     
+      <div data-role="view" data-title="Avery Scott" id="map" data-stretch="true" data-show="showMap">
+            <div data-role="content" class="view-content">
+               <div data-role="navbar">
+              <a data-role="backbutton" id="backhome" data-align="left">Back</a>
+             </div>
+            <div id="map_canvas" style="width:100%;"></div>
+            </div>
+        </div>
+      <div data-role="modalview" id="modalview-add" style="width: 95%; height: 12em;">
+        <div data-role="header">
+            <div data-role="navbar">
+                <span>Request Office</span>
+                <a data-click="closeModalViewAdd" data-role="button" data-align="right">Cancel</a>
+            </div>
+        </div>
+
+        <ul data-role="listview" data-style="inset">
+            <li>
+                <label for="username">Email:</label>
+                <input type="text" id="name" /></li>
+        </ul>
+        <a data-click="addNew" class="addNew" type="button" data-role="button">Place Request</a>
+    </div>
+
+       <div id="tabmail" 
+             data-role="view"  
+             data-title="Avery Scott" >
+             
+            <div data-role="content" class="view-content">
+               <div data-role="navbar">
+              <a data-role="backbutton" data-align="left">Back</a>
+             </div>
+                
+                <ul data-role="listview" data-style="inset">
+                    <li>
+                       
+                        <input type="search"  placeholder="Username" required validationMessage="Username is required!"/>
+                        Search:
+                    </li>
+                    <li>
+                       
+                        <input type="url"  placeholder="Username" required validationMessage="Username is required!"/>
+                        URL:
+                    </li>
+                    <li>
+                      
+                        <input type="email"  placeholder="Username" required validationMessage="Username is required!"/>
+                        Email:
+                    </li>
+                     
+                </ul>
+		    
+                        <a data-role="button" class="btn btn-login">Login</a>
+                
+            </div>
+
+        </div>
+
+      <div data-role="layout" data-id="tabstrip-layout" >
+
+            <!--Header-->
+            <div data-role="header">
+                 <div data-role="navbar">
+            <span data-role="view-title"></span>
+           
+            <a data-align="right" data-role="button" data-rel="actionsheet" class="nav-button" data-icon="share" href="#sharemedia"></a>
+            <a data-align="left" href="tel:233-268468627" data-role="button" data-icon="phone" data-rel="external"></a>
+        </div>
+            </div>
+
+            <!--Footer-->
+            <div data-role="footer">
+                <div data-role="tabstrip">
+                    <a href="#tabstrip-home" data-icon="home">Home</a>
+                    <a href="#tabstrip-mainstart" data-icon="organize">Services</a>
+                    <a href="#tabmail" data-icon="compose">Email</a>
+                    <a href="#map" data-icon="contacts">Contact</a>
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>

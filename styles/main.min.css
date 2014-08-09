@@ -1,0 +1,20 @@
+﻿#tabstrip-home .km-content{
+ 
+background-image: url('../AppResource/logo.png');
+background-size: auto 100%;
+background-repeat: repeat;
+color : white;
+ 
+}
+
+.km-flat .km-view .km-navbar {
+    background-color: rgb(255, 255, 255);
+}
+.km-flat .km-view .km-tabstrip .km-button.km-state-active {
+    background-color: rgb(255, 148, 0);
+}
+.km-flat .km-view .km-tabstrip .km-button {
+    background-color: rgb(255, 148, 0);
+}
+
+
