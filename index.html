@@ -2,9 +2,10 @@
 <html>
 <head>
     <title></title>
-    
+   
     <link href="styles/kendo.mobile.all.min.css" rel="stylesheet" />
-    <link href="styles/main.min.css" rel="stylesheet" />
+    
+     <link href="styles/main.min.css" rel="stylesheet" />
      <script src="cordova.js"></script>
     <script src="js/cordova-plugins.js"></script>
     <script src="js/jquery.min.js"></script>
@@ -13,24 +14,28 @@
      
      <script src="js/app.js"></script>
     <script src="SocialSharing.js"></script>
-   
    <script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
 </head>
 <body>
-      <div id="tabstrip-home" data-role="view"  data-title="Avery Scott">
-             
+      <div id="tabstrip-home" data-role="view" data-init="mobileListViewPullToRefresh" data-title="Avery Scott">
+    
             <div data-role="content" class="view-content">
-			 <h1 class="app-logo hide-text center-block">Avery Scott<small>  Office Rental Services Ghana</small></h1>
-            
+			 <h1 class="app-logo hide-text center-block">Avery Scott<small> Office RENTAL SERVICE GHANA. You Need OFFICE SPACE FOR A Week,Month OR JUST FOR A DAY.</small></h1>
+
+                <ul id="pull-to-refresh-listview">
+                   
+                </ul>
+          
             <ul data-role="actionsheet" id="sharemedia" data-popup='{"direction": "left"}'>
                  <li><a data-click="sharefacebook" class="addNew" type="button" href="#" data-role="button">Share Via Facebook</a>  </li>
-               
 				<li><a data-click="sharetwitter" data-role="button" type="button" href="#">Share Via Twitter</a></li>
-                <li><a data-click="sharemail" data-role="button" type="button" href="#">Send Mail</a></li>
+               <!-- <li><a data-click="onShow" data-role="button" type="button" href="#">Send Mail</a></li>-->
                 <li><a data-click="sendsms" data-role="button" type="button" href="#">Send SMS</a></li>
             </ul>
-           
+          
 			</div>
+
+             
     </div>
 
       <div id="tabstrip-mainstart" 
@@ -42,17 +47,17 @@
               <a data-role="backbutton" id="back" data-align="left">Back</a>
              </div>
 			 
-		
+	
 	             <ul data-role="listview" data-style="inset" data-type="group">
         <li><h2>Executive Suite </h2>  
              <div data-role="navbar">
             <a data-align="left" data-icon="add" data-role="button"  data-rel="modalview" href="#modalview-add">Book</a>
         </div>
             <ul>
-                <li><h2>Executive work station </h2></li>
-                <li><h2>Additional standard work station</h2></li>
-                <li><h2>File storage</h2></li>
-                <li><h2>Conference room discount</h2></li>
+                <li>Executive work station</li>
+                <li>Additional standard work station</li>
+                <li>File storage</li>
+                <li>Conference room discount</li>
             </ul>
         </li>
         <li><h2>Premium Suite </h2>
@@ -60,34 +65,33 @@
             <a data-align="left" data-icon="add" data-role="button"  data-rel="modalview" href="#modalview-add">Book</a>
         </div>
             <ul>
-                 <li><h2>Executive work station </h2></li>
-                <li><h2>Additional standard work station</h2></li>
-                <li><h2>File storage</h2></li>
-                <li><h2>Conference room discount</h2></li>
+                 <li>Executive work station</li>
+                <li>Additional standard work station</li>
+                <li>File storage</li>
+                <li>Conference room discount</li>
             </ul>
         </li>
-        <li><h2>Co-Shared</h2>
+        <li><h2>Co-Shared Suite</h2>
+           <div data-role="navbar">
+            <a data-align="left" data-icon="add" data-role="button"  data-rel="modalview" href="#modalview-add">Book</a>
+        </div>
+            <ul>
+                 <li>Executive work station</li>
+                <li>Additional standard work station</li>
+                <li>File storage</li>
+                <li>Conference room discount</li>
+            </ul>
+        </li>
+      <li><h2>Standard Suite</h2>
            <div data-role="navbar">
            
             <a data-align="left" data-icon="add" data-role="button"  data-rel="modalview" href="#modalview-add">Book</a>
         </div>
             <ul>
-                 <li><h2>Executive work station </h2></li>
-                <li><h2>Additional standard work station</h2></li>
-                <li><h2>File storage</h2></li>
-                <li><h2>Conference room discount</h2></li>
-            </ul>
-        </li>
-      <li><h2>Standard</h2>
-           <div data-role="navbar">
-           
-            <a data-align="left" data-icon="add" data-role="button"  data-rel="modalview" href="#modalview-add">Book</a>
-        </div>
-            <ul>
-                 <li><h2>Executive work station </h2></li>
-                <li><h2>Additional standard work station</h2></li>
-                <li><h2>File storage</h2></li>
-                <li><h2>Conference room discount</h2></li>
+                 <li>Executive work station</li>
+                <li>Additional standard work station</li>
+                <li>File storage</li>
+                <li>Conference room discount</li>
             </ul>
         </li>
     </ul>
@@ -132,23 +136,23 @@
                 <ul data-role="listview" data-style="inset">
                     <li>
                        
-                        <input type="search"  placeholder="Username" required validationMessage="Username is required!"/>
-                        Search:
+                        <input type="search"  placeholder="Your Full Name" required validationMessage="Username is required!"/>
+                        Full Name:
                     </li>
                     <li>
                        
-                        <input type="url"  placeholder="Username" required validationMessage="Username is required!"/>
-                        URL:
+                        <input type="url"  placeholder="Email" required validationMessage="Username is required!"/>
+                       Email:
                     </li>
                     <li>
                       
-                        <input type="email"  placeholder="Username" required validationMessage="Username is required!"/>
-                        Email:
+                        <input type="email"  placeholder="Message" required validationMessage="Message is required!"/>
+                        Message:
                     </li>
-                     
+                      
                 </ul>
-		    
-                        <a data-role="button" class="btn btn-login">Login</a>
+
+                <span><a data-role="button" data-click="onShow" style="display: block; margin: 2em; text-align: center;">Send Message</a></span>
                 
             </div>
 
@@ -160,9 +164,10 @@
             <div data-role="header">
                  <div data-role="navbar">
             <span data-role="view-title"></span>
-           
+           <div id="loader" data-role="view"></div>
             <a data-align="right" data-role="button" data-rel="actionsheet" class="nav-button" data-icon="share" href="#sharemedia"></a>
             <a data-align="left" href="tel:233-268468627" data-role="button" data-icon="phone" data-rel="external"></a>
+            
         </div>
             </div>
 
