@@ -20,7 +20,7 @@
       <div id="tabstrip-home" data-role="view" data-init="mobileListViewPullToRefresh" data-title="Avery Scott">
     
             <div data-role="content" class="view-content">
-			 <h1 class="app-logo hide-text center-block">Avery Scott<small> Office RENTAL SERVICE GHANA. You Need OFFICE SPACE FOR A Week,Month OR JUST FOR A DAY.</small></h1>
+			 <h1 class="app-logo hide-text center-block">Avery Scott<small> Office RENTAL SERVICE GHANA.</small></h1>
 
                 <ul id="pull-to-refresh-listview">
                    
@@ -46,9 +46,7 @@
                <div data-role="navbar" id="edit-navbar">
               <a data-role="backbutton" id="back" data-align="left">Back</a>
              </div>
-			 
-	
-	             <ul data-role="listview" data-style="inset" data-type="group">
+	        <ul data-role="listview" data-style="inset" data-type="group">
         <li><h2>Executive Suite </h2>  
              <div data-role="navbar">
             <a data-align="left" data-icon="add" data-role="button"  data-rel="modalview" href="#modalview-add">Book</a>
@@ -98,7 +96,16 @@
             </div>
 
         </div>
+    <div data-role="modalview" id="error-view" style="width: 90%; height: 12em;">
+        <div data-role="header">
+            <div data-role="navbar">
+                <span>Network Connection Error</span>
+                <a data-click="closeModalViewAdd" data-role="button" data-align="right">Close</a>
+            </div>
+        </div>
 
+       
+    </div>
      
       <div data-role="view" data-title="Avery Scott" id="map" data-stretch="true" data-show="showMap">
             <div data-role="content" class="view-content">
@@ -123,8 +130,7 @@
         </ul>
         <a data-click="addNew" class="addNew" type="button" data-role="button">Place Request</a>
     </div>
-
-       <div id="tabmail" 
+      <div id="tabmail" 
              data-role="view"  
              data-title="Avery Scott" >
              
