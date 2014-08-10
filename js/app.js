@@ -1,12 +1,26 @@
-﻿window.kendoMobileApplication = new kendo.mobile.Application(document.body, { transition: "slide", layout: "tabstrip-layout", skin: "flat" });
+﻿window.kendoMobileApplication = new kendo.mobile.Application(document.body, { transition: "slide", layout: "tabstrip-layout", skin: "flat", platform: "android" });
+
 var onDeviceReady = function () {
-    //window.plugins.socialsharing.share("message", "subject");
-  
    
 };
 document.addEventListener('deviceready', onDeviceReady, false);
-
-
+function mobileListViewPullToRefresh(e) {
+    setTimeout(function () {
+     $("#pull-to-refresh-listview").kendoMobileListView({
+        pullToRefresh: true
+    });
+    }, 5000);
+   
+}
+function onShow() {
+    var seconds = 5;
+    window.kendoMobileApplication.showLoading();
+    window.kendoMobileApplication.changeLoadingMessage( " seconds left!");
+    setTimeout(function () { onhide() }, 3000);
+}
+function onhide() {
+    window.kendoMobileApplication.hideLoading();; //show loading animation
+}
 function closeModalViewAdd() {
     $("#modalview-add").kendoMobileModalView("close");
 }
@@ -20,7 +34,7 @@ function sharetwitter() {
     window.plugins.socialsharing.shareViaTwitter('Message via Twitter');
 }
 function sendsms() {
-    window.plugins.socialsharing.shareViaSMS('My cool message', '233268468627', function (msg)
+    window.plugins.socialsharing.shareViaSMS('Give us your message', '233268468627', function (msg)
     { console.log('ok: ' + msg) },
     function (msg)
     { alert('error: ' + msg) })
@@ -29,7 +43,7 @@ function sharemail() {
     window.plugins.socialsharing.shareViaEmail(
    'Message',
    'Subject',
-   ['to@person1.com', 'to@person2.com'], // TO: must be null or an array
+   ['info@averyscottgh.con'], // TO: must be null or an array
    ['cc@person1.com'], // CC: must be null or an array
    null, // BCC: must be null or an array
    ['https://www.google.nl/images/srpr/logo4w.png', 'www/localimage.png'], // FILES: can be null, a string, or an array
