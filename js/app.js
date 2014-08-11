@@ -2,7 +2,7 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 var onDeviceReady = function () {
     navigator.splashscreen.hide();
-    Toast.longshow("Hello, I am long Toast");
+    
     //navigator.notification.alert('Connection type: ');
 };
  function checkconnection() {
