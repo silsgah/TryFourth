@@ -1,7 +1,7 @@
 ﻿window.kendoMobileApplication = new kendo.mobile.Application(document.body, { transition: "slide", layout: "tabstrip-layout", skin: "flat", platform: "android" });
-
+document.addEventListener('deviceready', onDeviceReady, false);
 var onDeviceReady = function () {
-   
+    navigator.splashscreen.hide();
     checkconnection();
 };
 window.kendoMobileApplication.checkconnection = function() {
@@ -15,15 +15,16 @@ window.kendoMobileApplication.checkconnection = function() {
     states[Connection.CELL_4G] = 'Cell 4G connection';
     states[Connection.CELL] = 'Cell generic connection';
     states[Connection.NONE] = 'No network connection';
-
-    $('#sp_connection_type').text(states[networkState] + " " + device_language);
+    alert('Connection type: ' + states[networkState]);
+    navigator.notification.alert('Connection type: ' + states[networkState]);
+    $("#error-view").show().data().kendoMobileModalView.open();
     if (states[networkState] == 'No network connection') {
-        navigator.notification.alert('No active connection found!', oppenSettings, 'Network ', 'OK');
+        navigator.notification.alert('Connection type: ' + states[networkState]);
         $("#error-view").show().data().kendoMobileModalView.open();
     }
 }
 
-document.addEventListener('deviceready', onDeviceReady, false);
+
 function mobileListViewPullToRefresh(e) {
     setTimeout(function () {
      $("#pull-to-refresh-listview").kendoMobileListView({
