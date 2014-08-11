@@ -1,9 +1,9 @@
 ﻿window.kendoMobileApplication = new kendo.mobile.Application(document.body, { transition: "slide", layout: "tabstrip-layout", skin: "flat", platform: "android" });
 document.addEventListener('deviceready', onDeviceReady, false);
 var onDeviceReady = function () {
-    navigator.splashscreen.hide();
+    //navigator.splashscreen.hide();
     
-    //navigator.notification.alert('Connection type: ');
+    navigator.notification.alert('Connection type: ');
 };
  function checkconnection() {
     var networkState = navigator.connection.type;
@@ -23,8 +23,7 @@ var onDeviceReady = function () {
         navigator.notification.alert('Connection type: ' + states[networkState]);
         $("#error-view").show().data().kendoMobileModalView.open();
     }
-}
-
+ }
 
 function mobileListViewPullToRefresh(e) {
     setTimeout(function () {
