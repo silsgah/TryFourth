@@ -1,9 +1,10 @@
 ﻿window.kendoMobileApplication = new kendo.mobile.Application(document.body, { transition: "slide", layout: "tabstrip-layout", skin: "flat", platform: "android" });
 
 var onDeviceReady = function () {
+   
     checkconnection();
 };
- function checkconnection() {
+window.kendoMobileApplication.checkconnection = function() {
     var networkState = navigator.connection.type;
     var states = {};
     states[Connection.UNKNOWN] = 'Unknown connection';
