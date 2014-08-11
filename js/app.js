@@ -2,7 +2,7 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 var onDeviceReady = function () {
     navigator.splashscreen.hide();
-    checkconnection();
+    navigator.notification.alert('Connection type: ');
 };
  function checkconnection() {
     var networkState = navigator.connection.type;
@@ -30,7 +30,7 @@ function mobileListViewPullToRefresh(e) {
      $("#pull-to-refresh-listview").kendoMobileListView({
         pullToRefresh: true
     });
-    }, 5000);
+    }, 2000);
 }
 
 function onShow() {
