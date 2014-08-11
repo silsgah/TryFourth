@@ -27,6 +27,10 @@
   <feature name="NetworkStatus">
     <param name="android-package" value="org.apache.cordova.NetworkManager" />
   </feature>
+  <feature name="Notification">
+    <param name="android-package" value="org.apache.cordova.Notification" />
+  </feature>
+  
   <icon src="AppResource/Android/drawable-ldpi/ldpi.png" gap:platform="android" gap:density="ldpi" />
   <icon src="AppResource/Android/drawable-mdpi/mdpi.png" gap:platform="android" gap:density="mdpi" />
   <icon src="AppResource/Android/drawable-hdpi/hdpi.png" gap:platform="android" gap:density="hdpi" />
@@ -42,7 +46,7 @@
   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
   <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
-
+  <uses-permission android:name="android.permission.VIBRATE" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.READ_PHONE_STATE" />
