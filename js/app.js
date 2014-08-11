@@ -4,7 +4,7 @@ var onDeviceReady = function () {
     navigator.splashscreen.hide();
     checkconnection();
 };
-window.kendoMobileApplication.checkconnection = function() {
+ function checkconnection() {
     var networkState = navigator.connection.type;
     var states = {};
     states[Connection.UNKNOWN] = 'Unknown connection';
