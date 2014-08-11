@@ -2,7 +2,7 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 var onDeviceReady = function () {
     navigator.splashscreen.hide();
-    navigator.notification.alert('Connection type: ');
+    //navigator.notification.alert('Connection type: ');
 };
  function checkconnection() {
     var networkState = navigator.connection.type;
@@ -74,7 +74,9 @@ function sharemail() {
 }
 
 function showMap() {
-    navigator.geolocation.getCurrentPosition(onSuccessShowMap,onErrorShowMap);
+    window.kendoMobileApplication.showLoading();
+    navigator.geolocation.getCurrentPosition(onSuccessShowMap, onErrorShowMap);
+    onhide();
 }
 function onErrorShowMap(error) {
     alert(error);
