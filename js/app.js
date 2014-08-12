@@ -1,7 +1,7 @@
 ﻿window.kendoMobileApplication = new kendo.mobile.Application(document.body, { transition: "slide", layout: "tabstrip-layout", skin: "flat", platform: "android" });
 document.addEventListener('deviceready', onDeviceReady, false);
 var onDeviceReady = function () {
-    //navigator.splashscreen.hide();
+    navigator.splashscreen.hide();
     
     navigator.notification.alert('Connection type: ');
 };
