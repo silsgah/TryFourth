@@ -14,7 +14,7 @@
     <script src="js/kendo.all.min.js"></script>
     <script src="js/app.js"></script>
     <script src="SocialSharing.js"></script>
-    
+    <script src="js/email_composer.js"></script>
 </head>
 <body>
       <div id="tabstrip-home" data-role="view" data-init="mobileListViewPullToRefresh" data-title="Avery Scott">
@@ -29,7 +29,7 @@
             <ul data-role="actionsheet" id="sharemedia" data-popup='{"direction": "left"}'>
                  <li><a data-click="sharefacebook" class="addNew" type="button" href="#" data-role="button">Share Via Facebook</a>  </li>
 				<li><a data-click="sharetwitter" data-role="button" type="button" href="#">Share Via Twitter</a></li>
-               <!-- <li><a data-click="onShow" data-role="button" type="button" href="#">Send Mail</a></li>-->
+                <li><a data-role="button" data-bind="click: composeEmail">Compose email</a></li>
                 <li><a data-click="sendsms" data-role="button" type="button" href="#">Send SMS</a></li>
             </ul>
           
