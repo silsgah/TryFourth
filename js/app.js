@@ -2,6 +2,7 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 var onDeviceReady = function () {
     navigator.splashscreen.hide();
+    checkconnection();
     navigator.notification.alert('Connection type: ');
 };
  function checkconnection() {
@@ -15,9 +16,7 @@ var onDeviceReady = function () {
     states[Connection.CELL_4G] = 'Cell 4G connection';
     states[Connection.CELL] = 'Cell generic connection';
     states[Connection.NONE] = 'No network connection';
-    alert('Connection type: ' + states[networkState]);
-    navigator.notification.alert('Connection type: ' + states[networkState]);
-    $("#error-view").show().data().kendoMobileModalView.open();
+
     if (states[networkState] == 'No network connection') {
         navigator.notification.alert('Connection type: ' + states[networkState]);
         $("#error-view").show().data().kendoMobileModalView.open();
