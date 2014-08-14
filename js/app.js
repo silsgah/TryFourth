@@ -21,7 +21,15 @@ var onDeviceReady = function () {
         $("#error-view").show().data().kendoMobileModalView.open();
     }
  }
-
+ function sendmail() {
+     window.plugin.email.open({
+         to:      ['max.mustermann@appplant.de'],
+         cc:      ['erika.mustermann@appplant.de'],
+         bcc:     ['john.doe@appplant.com', 'jane.doe@appplant.com'],
+         subject: 'Greetings',
+         body:    'How are you? Nice greetings from Leipzig'
+     });
+ }
 function mobileListViewPullToRefresh(e) {
     setTimeout(function () {
      $("#pull-to-refresh-listview").kendoMobileListView({
