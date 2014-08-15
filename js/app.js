@@ -30,13 +30,44 @@ var onDeviceReady = function () {
          body:    'How are you? Nice greetings from Leipzig'
      });
  }
+//function mobileListViewPullToRefresh(e) {
+//    setTimeout(function () {
+//     $("#pull-to-refresh-listview").kendoMobileListView({
+//        pullToRefresh: true
+//    });
+//    }, 2000);
+//}
 function mobileListViewPullToRefresh(e) {
-    setTimeout(function () {
-     $("#pull-to-refresh-listview").kendoMobileListView({
-        pullToRefresh: true
+    var dataSource = new kendo.data.DataSource({
+        serverPaging: true,
+        pageSize: 10,
+        transport: {
+            read: {
+                url: "https://api.twitter.com/1.1/statuses/user_timeline.json?count=5&user_id=silasgah", // the remove service url
+                dataType: "jsonp" // JSONP (JSON with padding) is required for cross-domain AJAX
+            },
+            parameterMap: function (options) {
+                return {
+                    q: "silasgah",
+                    page: options.page,
+                    rpp: options.pageSize
+                };
+            }
+        },
+        schema: { // describe the result format
+            data: "results" // the data which the data source will be bound to is in the "results" field
+        }
     });
-    }, 2000);
+
+    $("#pull-to-refresh-listview").kendoMobileListView({
+        dataSource: dataSource,
+        pullToRefresh: true,
+        appendOnRefresh: true,
+        template: $("#pull-to-refresh-template").text(),
+    });
 }
+
+
 
 function onShow() {
     var seconds = 5;

@@ -20,7 +20,9 @@
       <div id="tabstrip-home" data-role="view" data-init="mobileListViewPullToRefresh" data-title="Avery Scott">
     
             <div data-role="content" class="view-content">
-			 <h1 class="app-logo hide-text center-block"> </h1>
+			<a class="twitter-timeline" href="https://twitter.com/twitter" data-widget-id="500140507452813312">Tweets by @twitter</a>
+<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
+
 
                 <ul id="pull-to-refresh-listview">
                    
@@ -96,7 +98,7 @@
             </div>
 
         </div>
-    <div data-role="modalview" id="error-view" style="width: 90%; height: 12em;">
+      <div data-role="modalview" id="error-view" style="width: 90%; height: 12em;">
         <div data-role="header">
             <div data-role="navbar">
                 <span>Network Connection Error</span>
@@ -106,7 +108,9 @@
 
        
     </div>
-     
+    
+
+
       <div data-role="view" data-title="Avery Scott" id="map" data-stretch="true" data-show="showMap">
             <div data-role="content" class="view-content">
                <div data-role="navbar">
@@ -130,10 +134,7 @@
                 <input type="text" id="name" /></li>
         </ul>
           
-                  <a data-click="addNew" class="addNew" data-role="button">Place Request</a>
-               
-              
-        
+                  <a data-click="addNew" class="addNew" data-role="button">Place Request</a> 
     </div>
       <div id="tabmail" 
              data-role="view"  
@@ -193,5 +194,16 @@
             </div>
         </div>
     <script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+
+    <script id="pull-to-refresh-template" type="text/x-kendo-template">
+    <div class="tweet">
+        <img class="pullImage" src="#= profile_image_url #" alt="#= from_user #" />#= text #
+        <div class="metadata">
+            <a class="sublink" target="_blank" href="http://twitter.com/\\#!/#= from_user #/status/#= id_str #" rel="nofollow">#= kendo.toString(new Date(Date.parse(created_at)), "dd MMM HH:mm") #</a>
+            |
+            <a class="sublink" href="http://twitter.com/#= from_user #" rel="nofollow">#= from_user #</a>
+        </div>
+    </div>
+</script>
 </body>
 </html>
